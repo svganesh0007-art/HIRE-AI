@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIRE AI — Intelligent Candidate Screening Platform</title>
+  <meta name="description" content="HIRE AI is a privacy-first, offline candidate screening platform. Compare multiple resumes against a job description to rank and select the strongest candidates.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-body">
+
+  <!-- Ambient Background Grid -->
+  <div class="ambient-grid" aria-hidden="true"></div>
+
+  <!-- Main Frame -->
+  <div class="landing-frame">
+
+    <!-- ─── NAVBAR ─── -->
+    <nav class="site-navbar">
+      <div class="nav-left">
+        <a href="index.html" class="brand-link">
+          <span class="brand-logo">&gt;_</span>
+          <span class="brand-name">HIRE <span class="brand-accent">AI</span></span>
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Screening</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <span class="offline-badge"><span class="pulse-dot"></span> OFFLINE</span>
+        <a href="analyzer.html" class="btn btn-primary-glow">
+          Analyze Resume &rarr;
+        </a>
+      </div>
+    </nav>
+
+    <!-- ─── HERO SECTION ─── -->
+    <header id="home" class="hero-section">
+
+      <!-- LEFT: Hero Text -->
+      <div class="hero-left">
+        <div class="hero-tag">
+          <span class="tag-bracket">[</span> INTELLIGENT CANDIDATE SCREENING <span class="tag-bracket">]</span>
+        </div>
+
+        <h1 class="hero-title">
+          Screen Smarter.<br><span class="green-glow-text">Hire Better.</span>
+        </h1>
+
+        <p class="hero-description">
+          Compare multiple candidate resumes against a single job description, rank match scores, and determine who gets <strong>SELECTED</strong> — all offline, in seconds.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="analyzer.html" class="btn btn-primary-glow btn-lg">
+            Analyze Resume &rarr;
+          </a>
+          <a href="#how-it-works" class="btn btn-outline-green btn-lg">
+            How It Works
+          </a>
+        </div>
+
+        <div class="hero-terminal-line">
+          <code>&gt; hireai.screen() <span class="terminal-cursor">|</span></code>
+        </div>
+      </div>
+
+      <!-- RIGHT: AI Command Center -->
+      <div class="hero-right">
+        <div class="arc-scene" id="arcScene" aria-label="AI Resume Screening Visualization">
+
+          <!-- Background glow behind robot -->
+          <div class="arc-bg-glow"></div>
+
+          <!-- SVG: orbit ring, scanner arc, platform ellipses, connection lines -->
+          <svg class="arc-svg" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Outer orbit ring -->
+            <circle class="orbit-ring" cx="260" cy="260" r="175"/>
+            <!-- Rotating scanner arc highlight -->
+            <circle class="scan-arc" cx="260" cy="260" r="175"
+              stroke-dasharray="60 1040" stroke-dashoffset="0"/>
+            <!-- Inner soft halo -->
+            <circle class="inner-halo" cx="260" cy="260" r="115"/>
+            <!-- Platform ellipses -->
+            <ellipse class="plat-ring plat-r1" cx="260" cy="436" rx="130" ry="18"/>
+            <ellipse class="plat-ring plat-r2" cx="260" cy="436" rx="95"  ry="13"/>
+            <ellipse class="plat-ring plat-r3" cx="260" cy="436" rx="62"  ry="8"/>
+            <!-- Upward platform energy beam -->
+            <line class="plat-beam" x1="260" y1="436" x2="260" y2="290"/>
+            <!-- Connection lines (robot core → card centres, updated by JS) -->
+            <line id="cl0" class="conn-l" x1="260" y1="268" x2="260" y2="268"/>
+            <line id="cl1" class="conn-l" x1="260" y1="268" x2="260" y2="268"/>
+            <line id="cl2" class="conn-l" x1="260" y1="268" x2="260" y2="268"/>
+            <line id="cl3" class="conn-l" x1="260" y1="268" x2="260" y2="268"/>
+          </svg>
+
+          <!-- Platform base + particles -->
+          <div class="arc-platform">
+            <div class="plat-particle pp1"></div>
+            <div class="plat-particle pp2"></div>
+            <div class="plat-particle pp3"></div>
+            <div class="plat-particle pp4"></div>
+            <div class="plat-particle pp5"></div>
+          </div>
+
+          <!-- ══ ROBOT — pure CSS ══ -->
+          <div class="arc-robot" id="arcRobot">
+
+            <!-- Antenna -->
+            <div class="rb-antenna-wrap">
+              <div class="rb-antenna-stem"></div>
+              <div class="rb-antenna-tip"></div>
+            </div>
+
+            <!-- Head -->
+            <div class="rb-head">
+              <!-- Ear panels -->
+              <div class="rb-ear rb-ear-l"></div>
+              <div class="rb-ear rb-ear-r"></div>
+              <!-- Visor -->
+              <div class="rb-visor">
+                <div class="rb-visor-inner">
+                  <span class="rb-eye rb-eye-l"></span>
+                  <span class="rb-eye-gap"></span>
+                  <span class="rb-eye rb-eye-r"></span>
+                </div>
+              </div>
+              <!-- Chin detail -->
+              <div class="rb-chin"></div>
+            </div>
+
+            <!-- Neck -->
+            <div class="rb-neck">
+              <div class="rb-neck-inner"></div>
+            </div>
+
+            <!-- Torso -->
+            <div class="rb-torso">
+              <!-- Shoulder armour plates -->
+              <div class="rb-shoulder rb-sl">
+                <div class="rb-sh-detail"></div>
+              </div>
+              <div class="rb-shoulder rb-sr">
+                <div class="rb-sh-detail"></div>
+              </div>
+
+              <!-- Chest panel -->
+              <div class="rb-chest-panel">
+                <!-- Chest core AI -->
+                <div class="rb-chest-core" id="chestCore">
+                  <div class="rb-core-ring crr1"></div>
+                  <div class="rb-core-ring crr2"></div>
+                  <div class="rb-core-center">
+                    <span class="rb-core-label">AI</span>
+                  </div>
+                </div>
+                <!-- Side vents -->
+                <div class="rb-vent rb-vent-l">
+                  <div class="rb-vent-bar"></div>
+                  <div class="rb-vent-bar"></div>
+                  <div class="rb-vent-bar"></div>
+                </div>
+                <div class="rb-vent rb-vent-r">
+                  <div class="rb-vent-bar"></div>
+                  <div class="rb-vent-bar"></div>
+                  <div class="rb-vent-bar"></div>
+                </div>
+              </div>
+
+              <!-- Lower torso grid -->
+              <div class="rb-lower-panel">
+                <div class="rb-lp-strip"></div>
+                <div class="rb-lp-strip"></div>
+              </div>
+            </div>
+
+          </div><!-- /.arc-robot -->
+
+          <!-- ══ ORBITING RESUME CARDS ══ -->
+          <div class="res-card" id="rc0">
+            <div class="rc-header">
+              <svg width="11" height="13" viewBox="0 0 10 12" fill="none"><rect x="1" y="1" width="8" height="10" rx="1" stroke="#00C853" stroke-width="1.2"/><line x1="3" y1="4" x2="7" y2="4" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="6" x2="7" y2="6" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="8" x2="5" y2="8" stroke="#00C853" stroke-width="0.8"/></svg>
+              <span>resume_01.txt</span>
+            </div>
+            <div class="rc-rows">
+              <div class="rc-row w75"></div>
+              <div class="rc-row w55"></div>
+              <div class="rc-row w85"></div>
+            </div>
+            <div class="rc-tag">Skills</div>
+            <div class="rc-check" id="rck0">✓</div>
+          </div>
+
+          <div class="res-card" id="rc1">
+            <div class="rc-header">
+              <svg width="11" height="13" viewBox="0 0 10 12" fill="none"><rect x="1" y="1" width="8" height="10" rx="1" stroke="#00C853" stroke-width="1.2"/><line x1="3" y1="4" x2="7" y2="4" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="6" x2="7" y2="6" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="8" x2="5" y2="8" stroke="#00C853" stroke-width="0.8"/></svg>
+              <span>resume_02.txt</span>
+            </div>
+            <div class="rc-rows">
+              <div class="rc-row w65"></div>
+              <div class="rc-row w80"></div>
+              <div class="rc-row w50"></div>
+            </div>
+            <div class="rc-tag">Experience</div>
+            <div class="rc-check" id="rck1">✓</div>
+          </div>
+
+          <div class="res-card" id="rc2">
+            <div class="rc-header">
+              <svg width="11" height="13" viewBox="0 0 10 12" fill="none"><rect x="1" y="1" width="8" height="10" rx="1" stroke="#00C853" stroke-width="1.2"/><line x1="3" y1="4" x2="7" y2="4" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="6" x2="7" y2="6" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="8" x2="5" y2="8" stroke="#00C853" stroke-width="0.8"/></svg>
+              <span>resume_03.txt</span>
+            </div>
+            <div class="rc-rows">
+              <div class="rc-row w90"></div>
+              <div class="rc-row w60"></div>
+              <div class="rc-row w70"></div>
+            </div>
+            <div class="rc-tag">Education</div>
+            <div class="rc-check" id="rck2">✓</div>
+          </div>
+
+          <div class="res-card" id="rc3">
+            <div class="rc-header">
+              <svg width="11" height="13" viewBox="0 0 10 12" fill="none"><rect x="1" y="1" width="8" height="10" rx="1" stroke="#00C853" stroke-width="1.2"/><line x1="3" y1="4" x2="7" y2="4" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="6" x2="7" y2="6" stroke="#00C853" stroke-width="0.8"/><line x1="3" y1="8" x2="5" y2="8" stroke="#00C853" stroke-width="0.8"/></svg>
+              <span>resume_04.txt</span>
+            </div>
+            <div class="rc-rows">
+              <div class="rc-row w70"></div>
+              <div class="rc-row w85"></div>
+              <div class="rc-row w45"></div>
+            </div>
+            <div class="rc-tag">Projects</div>
+            <div class="rc-check" id="rck3">✓</div>
+          </div>
+
+          <!-- ══ STATUS PANEL ══ -->
+          <div class="arc-status-panel hidden" id="arcStatus">
+            <div class="asp-row" id="asr0"><span class="asp-chk">✓</span> Analyzing Skills</div>
+            <div class="asp-row" id="asr1"><span class="asp-chk">✓</span> Matching Requirements</div>
+            <div class="asp-row" id="asr2"><span class="asp-chk">✓</span> Ranking Candidates</div>
+            <div class="asp-row" id="asr3"><span class="asp-chk">✓</span> Screening Complete</div>
+          </div>
+
+        </div><!-- /.arc-scene -->
+      </div><!-- /.hero-right -->
+
+    </header><!-- /.hero-section -->
+
+    <!-- ─── FEATURE STRIP ─── -->
+    <section id="features" class="feature-strip">
+      <div class="strip-item">
+        <div class="strip-icon-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div><h4>100% Offline</h4><p>No internet required</p></div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div><h4>Private &amp; Secure</h4><p>Your data stays with you</p></div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div><h4>No External APIs</h4><p>Purely local processing</p></div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div><h4>Lightning Fast</h4><p>Results in seconds</p></div>
+      </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─── -->
+    <section id="how-it-works" class="how-section">
+      <div class="section-header">
+        <span class="section-tag">// HOW_IT_WORKS</span>
+        <h2>Three Simple Steps</h2>
+        <p>From job description to candidate ranking in seconds.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>JOB DESCRIPTION</h3>
+          <p>Enter the job requirements for your target open role.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+          <h3>MULTIPLE RESUMES</h3>
+          <p>Upload multiple candidate resume files (.txt) at once.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>RANK &amp; SELECT</h3>
+          <p>Get match scores, candidate ranking, and selection status.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA BANNER ─── -->
+    <section class="cta-banner">
+      <div class="cta-inner">
+        <h2>Ready to Screen Your Candidates?</h2>
+        <p>Upload multiple resumes against any job description to rank top matches instantly.</p>
+        <a href="analyzer.html" class="btn btn-primary-glow btn-xl">Analyze Resume &rarr;</a>
+        <div class="cta-subnote">No signup required &bull; No data stored &bull; Works offline</div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer id="about" class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-logo">&gt;_</span>
+          <span class="brand-name">HIRE <span class="brand-accent">AI</span></span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Screening</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="analyzer.html">Start Screening</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>Built with HTML, CSS and Vanilla JavaScript. <span class="text-green">100% Offline.</span></p>
+      </div>
+    </footer>
+
+  </div><!-- /.landing-frame -->
+
+  <script src="script.js"></script>
+</body>
+</html>
