@@ -8,13 +8,18 @@ An offline-first, rule-based recruitment screening platform that evaluates **mul
 **Intelligent Resume Analyzer — Multi-Candidate Screening Platform**
 
 ---
+## 2.Demo Video
 
-## 2. Main Purpose
+Drive Link:https://drive.google.com/file/d/151Uc4f68CiyHs0EscFgNUPhMbHKJHREL/view?usp=drivesdk
+
+---
+
+## 3. Main Purpose
 To streamline HR and recruitment candidate shortlisting by comparing multiple candidate resumes against a target job description in a single operation. The system ranks candidates from highest to lowest match score and classifies each candidate as **SELECTED** or **NOT SELECTED**.
 
 ---
 
-## 3. Key Features
+## 4. Key Features
 - **Multi-File Resume Upload**: Select and process multiple candidate `.txt` files (`Priya_Resume.txt`, `Arun_Resume.txt`, `Karthik_Resume.txt`, `Vasanth_Resume.txt`, etc.) in a single batch.
 - **Single Job Description Target**: Paste or upload a common JD text against which all candidate resumes are evaluated.
 - **Configurable Selection Threshold**: Interactive slider (default **70%**). Candidates with match score $\ge 70\%$ are classified as **✓ SELECTED**; others are **✕ NOT SELECTED**. Adjusting the slider live-updates selection decisions.
@@ -26,14 +31,14 @@ To streamline HR and recruitment candidate shortlisting by comparing multiple ca
 
 ---
 
-## 4. Technologies Used
+## 5. Technologies Used
 - **HTML5**: Form controls, multi-file inputs (`<input type="file" multiple accept=".txt">`), semantic structure.
 - **CSS3**: Custom properties, Flexbox, Grid, rounded framed SaaS layout, responsive styling.
 - **Vanilla JavaScript**: Rule-based text preprocessing, keyword extraction, multi-resume FileReader handling, dynamic ranking, threshold evaluation.
 
 ---
 
-## 5. How It Works
+## 6. How It Works
 1. **Input Job Description**: Paste or upload the target role requirements.
 2. **Upload Resumes Pool**: Select multiple candidate `.txt` files or drag & drop them into the upload zone.
 3. **Compare Candidates**: The engine extracts technical keywords, matches them against every candidate resume, and calculates individual percentage scores.
@@ -41,7 +46,7 @@ To streamline HR and recruitment candidate shortlisting by comparing multiple ca
 
 ---
 
-## 6. Project Structure
+## 7. Project Structure
 ```
 intelligent-resume-analyzer/
 │
@@ -54,5 +59,5 @@ intelligent-resume-analyzer/
 
 ---
 
-## 7. Zero External Dependencies Statement
+## 8. Zero External Dependencies Statement
 > **Formal Confirmation**: This project contains **NO external packages, libraries, frameworks, or cloud APIs**. No React, Bootstrap, Tailwind, jQuery, Chart.js, OpenAI, or Gemini APIs are used. The application operates 100% locally by opening `index.html` in any web browser.
